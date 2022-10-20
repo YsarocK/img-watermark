@@ -1,0 +1,11 @@
+{
+  "name": "img-watermark",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js"
+  },
+  "author": "Etienne Moureton",
+  "license": "ISC"
+}
