@@ -1,12 +1,19 @@
 {
   "name": "img-watermark",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "",
-  "main": "index.ts",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
   "type": "module",
   "scripts": {
-    "dev": "node index.ts",
-    "test": "tsc && node test/addTextWatermark.js"
+    "build": "tsc",
+    "lint": "tslint -p tsconfig.json",
+    "format": "prettier --write \"**/*.ts\" \"**/*.js\"",
+    "prepare": "npm run build",
+    "prepublishOnly": "npm run lint",
+    "preversion": "npm run lint",
+    "version": "npm run format && git add -A src",
+    "postversion": "git push && git push --tags"
   },
   "author": "Etienne Moureton",
   "license": "ISC",
@@ -15,7 +22,5 @@
     "tslint": "^6.1.3",
     "tslint-config-prettier": "^1.18.0",
     "typescript": "^4.8.4"
-  },
-  "format": "prettier --write \"src/**/*.ts\" \"src/**/*.js\"",
-  "lint": "tslint -p tsconfig.json"
+  }
 }
